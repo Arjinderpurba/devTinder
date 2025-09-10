@@ -2,15 +2,19 @@ const express = require('express');
 
 const app = express();
 
-app.use("/server",(req, res) => {
-    res.send("Server ton boldan...")
-});
+app.get("/user",(req, res) => {
+    res.send({firstName: "Arjinder", lastName: "Singh"});
+})
 
-app.use("/test",(req, res) => {
-    res.send("mic testing...")
-});
+app.post("/user",(req, res) => {
+    res.send("Data successfully saved in the DB");
+})
 
-app.use("/available",(req, res) => {
+app.delete("/user",(req, res) => {
+    res.send("Data Deleted successfully from the DB");
+})
+
+app.use("/user",(req, res) => {
     res.send("It's Available...")
 });
 
