@@ -6,10 +6,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
+    minLength: 3,
+    maxLength: 30,
   },
   lastName: {
     type: String,
     trim: true,
+    minLength: 3,
+    maxLength: 20,
   },
   emailId: {
     type: String,
@@ -28,11 +32,11 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    // validate(value){
-    //   if(!validator.isStrongPassword(value)){
-    //     throw new Error("Enter a srong password: " + value);
-    //   }
-    // }
+    validate(value){
+      if(!validator.isStrongPassword(value)){
+        throw new Error("Enter a srong password: " + value);
+      }
+    }
   },
   age: {
     type: Number,
