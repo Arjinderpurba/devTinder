@@ -23,4 +23,4 @@
 - GET /user/feed - Gets you the profiles of other users on plastform
 
 
-Status: ignore, interested, accepted, rejected  ,
+Status: ignore, interested, accepted, rejected 

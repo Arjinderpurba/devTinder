@@ -3,6 +3,7 @@ const profileRouter = express.Router();
 const { userAuth } = require("../middlewares/auth");
 const { validateProfileEditData } = require("../utils/validation");
 
+
 profileRouter.get("/profile/view", userAuth, async (req, res) => {
   try {
     const user = req.user;
@@ -32,5 +33,7 @@ profileRouter.patch("/profile/edit", userAuth, async (req, res) => {
     res.status(400).send("Error : " + err.message);
   }
 });
+
+
 
 module.exports = profileRouter;

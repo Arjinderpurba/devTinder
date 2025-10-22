@@ -1,4 +1,8 @@
 const validator = require("validator");
+const bcrypt = require("bcrypt");
+const User = require("../models/user");
+
+
 const validateSignUpData = (req) => {
   const { firstName, lastName, emailId, password } = req.body;
 
@@ -30,7 +34,12 @@ const validateProfileEditData = (req) => {
   return isEditAllowed;
 };
 
+
 module.exports = {
   validateSignUpData,
   validateProfileEditData,
 };
+
+
+
+
